@@ -33,13 +33,12 @@ WHERE price >= 46000;
 SELECT *
 FROM products
 order by price DESC
-    LIMIT 2;
+LIMIT 2;
 --5--
 
-SELECT product_name,price AS min_price
+SELECT product_name, price AS min_price
 FROM products
-ORDER BY price
-    LIMIT 1;
+where price = (SELECT MIN(price)FROM products);
 
 --6--
 SELECT *
