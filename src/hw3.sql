@@ -34,8 +34,11 @@ SELECT *
 FROM products
 order by price DESC
 LIMIT 2;
---5--
+--4-variant2--
+SELECT *FROM products
+where price=(SELECT max(price)FROM products);
 
+--5--
 SELECT product_name, price AS min_price
 FROM products
 where price = (SELECT MIN(price)FROM products);
